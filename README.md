@@ -69,5 +69,5 @@ The format itself is defined here:
 
 The project is hosted here:
 
-    http://code.google.com/p/hocr-tools/
+    http://cusat.github.com/hocr-tools
 
