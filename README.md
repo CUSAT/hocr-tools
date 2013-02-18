@@ -65,7 +65,7 @@ revisions.)
 
 The format itself is defined here:
 
-    http://docs.google.com/View?docID=dfxcv4vc_67g844kf&revision=_latest
+    https://github.com/CUSAT/hocr-tools/blob/master/format/format.pdf?raw=true
 
 The project is hosted here:
 
