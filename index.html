@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HOCR Tools by CUSAT</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>HOCR Tools</h1>
+        <p>Tools for manipulating and evaluating the hOCR format for representing multi-lingual OCR results by embedding them into HTML.</p>
+
+        <p class="view"><a href="https://github.com/CUSAT/hocr-tools">View the Project on GitHub <small>CUSAT/hocr-tools</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/CUSAT/hocr-tools/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/CUSAT/hocr-tools/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/CUSAT/hocr-tools">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>hocr-tools</h2>
+
+<p>Tools for manipulating and evaluating the hOCR microformat for
+representing multi-lingual OCR results.</p>
+
+<p>hOCR is a format for representing OCR output, including layout
+information, character confidences, bounding boxes, and style
+information. It embeds this information invisibly in standard HTML. By
+building on standard HTML, it automatically inherits well-defined support
+for most scripts, languages, and common layout options. Furthermore,
+unlike previous OCR formats, the recognized text and OCR-related
+information co-exist in the same file and survives editing and
+manipulation. hOCR markup is independent of the presentation.</p>
+
+<h3>The programs</h3>
+
+<pre><code>hocr-check file.html
+</code></pre>
+
+<p>Perform consistency checks on the hOCR file.</p>
+
+<pre><code>hocr-combine file1.html file2.html...
+</code></pre>
+
+<p>Combine the OCR pages contained in each HTML file into a single document.
+The document metadata is taken from the first file.</p>
+
+<pre><code>hocr-split file.html pattern 
+</code></pre>
+
+<p>Split a multipage hOCR file into hOCR files containing one page each.
+The pattern should something like "base-%03d.html"</p>
+
+<pre><code>hocr-eval-lines [-v] true-lines.txt hocr-actual.html 
+</code></pre>
+
+<p>Evaluate hOCR output against ASCII ground truth.  This evaluation method
+requires that the line breaks in true-lines.txt and the ocr_line elements
+in hocr-actual.html agree (most ASCII output from OCR systems satisfies this
+requirement).</p>
+
+<pre><code>hocr-eval-geom [-e element-name] [-o overlap-threshold] hocr-truth hocr-actual
+</code></pre>
+
+<p>Compare the segmentations at the level of the element name (default: ocr_line).
+Computes undersegmentation, oversegmentation, and missegmentation.</p>
+
+<pre><code>hocr-eval hocr-true.html hocr-actual.html    
+</code></pre>
+
+<p>Evaluate the actual OCR with respect to the ground truth.  This outputs
+the number of OCR errors due to incorrect segmentation and the number
+of OCR errors due to character recognition errors.</p>
+
+<p>It works by aligning segmentation components geometrically, and for each
+segmentation component that can be aligned, computing the string edit distance
+of the text the segmentation component contains.</p>
+
+<pre><code>hocr-merge-dc dc.xml hocr.html &gt; hocr-new.html 
+</code></pre>
+
+<p>Merges the Dublin Core metadata into the hOCR file by encoding the data in its header.</p>
+
+<h3>About the code</h3>
+
+<p>Each command line program is self contained; if you have the right
+Python packages installed, it should just work.  (Unfortunately, that
+means some code duplication; we may revisit this issue in later
+revisions.)</p>
+
+<h3>Pointers</h3>
+
+<p>The format itself is defined here:</p>
+
+<pre><code>http://docs.google.com/View?docID=dfxcv4vc_67g844kf&amp;revision=_latest
+</code></pre>
+
+<p>The project is hosted here:</p>
+
+<pre><code>http://code.google.com/p/hocr-tools/
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/CUSAT">CUSAT</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
