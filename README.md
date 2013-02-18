@@ -65,9 +65,9 @@ revisions.)
 
 The format itself is defined here:
 
-    https://github.com/CUSAT/hocr-tools/blob/master/format/format.pdf?raw=true
+>	https://github.com/CUSAT/hocr-tools/blob/master/format/format.pdf?raw=true
 
 The project is hosted here:
 
-    http://cusat.github.com/hocr-tools
+>	http://cusat.github.com/hocr-tools
 
